@@ -6,6 +6,7 @@ const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-grotesk" }
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cuckscan.xyz"),
   title: "CuckScan - How cucked are you?",
   description: "Paste an Instagram profile. Find out the truth. 🐂",
   openGraph: {
