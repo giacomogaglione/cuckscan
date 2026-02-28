@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { InstagramInput } from "@/components/instagram-input";
 import { FakeAnalyzer } from "@/components/fake-analyzer";
 import { ResultCard } from "@/components/result-card";
+import { RecentlyChecked } from "@/components/recently-checked";
 import { getScore, generateFakeStats } from "@/lib/score";
 import { getRoast } from "@/lib/roasts";
 
@@ -51,23 +52,25 @@ function CuckometroApp() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 py-12">
+    <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 py-12 overflow-hidden">
       <div className="w-full max-w-md flex flex-col items-center space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-mono)] tracking-tight">
-            <span className="text-[var(--neon)]">CUCKO</span>METRO
+          <h1 className="text-4xl md:text-7xl font-bold font-[family-name:var(--font-mono)] tracking-tight">
+            <span className="text-[var(--neon)]">CUCK</span>SCAN
           </h1>
           {state === "input" && (
             <p className="text-white/50 text-lg">
-              Incolla il profilo Instagram. Scopri la verità.
+              Drop the Instagram username. Find out the truth.
             </p>
           )}
         </div>
 
         {/* Input state */}
         {state === "input" && (
-          <InstagramInput onSubmit={handleSubmit} />
+          <>
+            <InstagramInput onSubmit={handleSubmit} />
+          </>
         )}
 
         {/* Analyzing state */}
@@ -87,10 +90,9 @@ function CuckometroApp() {
         )}
       </div>
 
-      {/* Footer */}
-      <footer className="mt-16 text-white/20 text-xs font-mono text-center">
-        <p>Ovviamente è tutto finto. O forse no. 🐂</p>
-      </footer>
+      {/* Recently checked marquee */}
+      {state === "input" && <RecentlyChecked />}
+
     </main>
   );
 }

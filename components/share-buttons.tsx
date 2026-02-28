@@ -11,7 +11,7 @@ interface Props {
 export function ShareButtons({ score, level, username }: Props) {
   const [copied, setCopied] = useState(false);
 
-  const shareText = `Ho analizzato @${username} sul Cuckometro: ${score}% - ${level} 🐂\nScopri il tuo livello:`;
+  const shareText = `I scanned @${username} on CuckScan: ${score}% - ${level} 🐂\nFind out yours:`;
   const shareUrl = typeof window !== "undefined"
     ? `${window.location.origin}/?r=${encodeURIComponent(btoa(JSON.stringify({ s: score, u: username })))}`
     : "";
@@ -38,13 +38,13 @@ export function ShareButtons({ score, level, username }: Props) {
 
   return (
     <div className="w-full max-w-md space-y-3">
-      <p className="text-white/40 text-sm font-mono uppercase tracking-wider">Condividi il risultato</p>
+      <p className="text-white/40 text-sm font-mono uppercase tracking-wider">Share result</p>
       <div className="flex gap-3">
         <button
           onClick={copyLink}
           className="flex-1 py-2 px-4 bg-white/10 border border-white/20 rounded-lg text-white text-sm font-mono hover:bg-white/20 transition-colors"
         >
-          {copied ? "Copiato!" : "Copia link"}
+          {copied ? "Copied!" : "Copy link"}
         </button>
         <button
           onClick={shareWhatsApp}

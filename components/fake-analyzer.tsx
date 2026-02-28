@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 
 const STEPS = [
-  "Accesso al profilo...",
-  "Analisi following sospetti...",
-  "Scansione commenti...",
-  "Controllo likes notturni...",
-  "Analisi stories recenti...",
-  "Elaborazione livello di corna...",
+  "Accessing profile...",
+  "Analyzing suspicious following...",
+  "Scanning comments...",
+  "Checking late-night likes...",
+  "Analyzing recent stories...",
+  "Processing cuck level...",
 ];
 
 const STEP_DELAY = 1200;
@@ -36,7 +36,7 @@ export function FakeAnalyzer({ username, onComplete }: Props) {
   return (
     <div className="w-full max-w-md space-y-3">
       <p className="text-white/60 font-mono text-sm mb-4">
-        Analizzando <span className="text-[var(--neon)]">@{username}</span>
+        Scanning <span className="text-[var(--neon)]">@{username}</span>
       </p>
       {STEPS.map((step, i) => (
         <div

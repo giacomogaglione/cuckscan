@@ -24,18 +24,18 @@ export function getScore(username: string): number {
 }
 
 export function generateFakeStats(username: string): {
-  followersSospetti: number;
-  commentiFuoco: number;
-  storiesNotturne: number;
-  dmSospetti: number;
-  fotoInDue: number;
+  suspiciousFollowers: number;
+  fireComments: number;
+  lateNightStories: number;
+  suspiciousDMs: number;
+  couplesPhotos: number;
 } {
   const h = hashUsername(username);
   return {
-    followersSospetti: (h % 900) + 100,
-    commentiFuoco: (h % 50) + 3,
-    storiesNotturne: (h % 30) + 1,
-    dmSospetti: (h % 200) + 10,
-    fotoInDue: (h % 15) + 1,
+    suspiciousFollowers: (h % 900) + 100,
+    fireComments: (h % 50) + 3,
+    lateNightStories: (h % 30) + 1,
+    suspiciousDMs: (h % 200) + 10,
+    couplesPhotos: (h % 15) + 1,
   };
 }

@@ -9,11 +9,11 @@ interface Props {
   roast: RoastResult;
   username: string;
   fakeStats: {
-    followersSospetti: number;
-    commentiFuoco: number;
-    storiesNotturne: number;
-    dmSospetti: number;
-    fotoInDue: number;
+    suspiciousFollowers: number;
+    fireComments: number;
+    lateNightStories: number;
+    suspiciousDMs: number;
+    couplesPhotos: number;
   };
   onReset: () => void;
 }
@@ -35,12 +35,12 @@ export function ResultCard({ score, roast, username, fakeStats, onReset }: Props
       </p>
 
       <div className="bg-white/5 border border-white/10 rounded-lg p-4 space-y-2 font-mono text-sm">
-        <p className="text-white/40 uppercase tracking-wider text-xs mb-3">Analisi dettagliata</p>
-        <div className="flex justify-between"><span className="text-white/60">Followers sospetti</span><span className="text-white">{fakeStats.followersSospetti}</span></div>
-        <div className="flex justify-between"><span className="text-white/60">Commenti con 🔥</span><span className="text-white">{fakeStats.commentiFuoco}</span></div>
-        <div className="flex justify-between"><span className="text-white/60">Stories viste dopo mezzanotte</span><span className="text-white">{fakeStats.storiesNotturne}</span></div>
-        <div className="flex justify-between"><span className="text-white/60">DM sospetti stimati</span><span className="text-white">{fakeStats.dmSospetti}</span></div>
-        <div className="flex justify-between"><span className="text-white/60">Foto in due (non con te)</span><span className="text-white">{fakeStats.fotoInDue}</span></div>
+        <p className="text-white/40 uppercase tracking-wider text-xs mb-3">Detailed analysis</p>
+        <div className="flex justify-between"><span className="text-white/60">Suspicious followers</span><span className="text-white">{fakeStats.suspiciousFollowers}</span></div>
+        <div className="flex justify-between"><span className="text-white/60">Comments with 🔥</span><span className="text-white">{fakeStats.fireComments}</span></div>
+        <div className="flex justify-between"><span className="text-white/60">Stories viewed after midnight</span><span className="text-white">{fakeStats.lateNightStories}</span></div>
+        <div className="flex justify-between"><span className="text-white/60">Estimated suspicious DMs</span><span className="text-white">{fakeStats.suspiciousDMs}</span></div>
+        <div className="flex justify-between"><span className="text-white/60">Couple photos (not with you)</span><span className="text-white">{fakeStats.couplesPhotos}</span></div>
       </div>
 
       <ShareButtons score={score} level={roast.level} username={username} />
@@ -49,7 +49,7 @@ export function ResultCard({ score, roast, username, fakeStats, onReset }: Props
         onClick={onReset}
         className="w-full py-3 bg-white/5 border border-white/20 rounded-lg text-white/60 font-mono hover:bg-white/10 hover:text-white transition-colors"
       >
-        Analizza un altro profilo
+        Scan another profile
       </button>
     </div>
   );
