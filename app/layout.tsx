@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     title: "CuckScan - How cucked are you?",
     description: "I just found out my cuck level 🐂",
     type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CuckScan - How cucked are you?",
+    description: "I just found out my cuck level 🐂",
+    images: ["/og.png"],
   },
 };
 
